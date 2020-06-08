@@ -17,6 +17,13 @@ subprojects {
     repositories {
         mavenLocal()
         mavenCentral()
+        maven {
+            url "https://nexus.recia.fr/repository/releases/"
+        }
+        maven {
+            url "https://nexus.recia.fr/repository/snapshots/"
+        }
+
     }
 
     buildscript {
