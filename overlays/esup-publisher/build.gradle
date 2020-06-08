@@ -1,0 +1,9 @@
+dependencies {
+    compile "org.esupportail.publisher:esup-publisher-ui:${esupPublisherVersion}@war"
+}
+
+war {
+    archiveName "${appDeployedName}.war"
+
+    classpath = classpath.files
+}
