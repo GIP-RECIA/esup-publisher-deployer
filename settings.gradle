@@ -10,5 +10,5 @@
 rootProject.name = 'gradle-war-deployer'
 
 
-include 'overlays:esup-publisher'
+include "overlays:${appName}"
 include 'overlays:psi-probe'

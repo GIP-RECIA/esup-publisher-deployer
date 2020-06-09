@@ -108,11 +108,11 @@ task projectProperties() {
         }
 
         /*
-         * Step Six:  Calculate portal.home (if absent)
+         * Step Six:  Calculate project.home (if absent)
          */
         if (!buildProperties.containsKey('project.home')) {
             // Still need to check for a JVM argument...
-            String projectHome = System.getProperty('project.home') ?: "${buildProperties.getProperty('server.base')}/${appDeployedName}"
+            String projectHome = System.getProperty('project.home') ?: "${buildProperties.getProperty('server.base')}/${appName}"
             buildProperties.setProperty('project.home', projectHome)
         }
 

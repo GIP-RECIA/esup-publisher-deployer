@@ -8,7 +8,7 @@ buildscript {
 }
 
 subprojects {
-    //apply plugin: 'maven'
+    apply plugin: 'maven'
     apply plugin: 'waroverlay'
     apply plugin: org.esco.script.gradle.plugins.GradleTomcatDeployPlugin
 

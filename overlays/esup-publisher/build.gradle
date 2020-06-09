@@ -3,7 +3,7 @@ dependencies {
 }
 
 war {
-    archiveName "${appDeployedName}.war"
+    archiveName "${appName}.war"
 
     classpath = classpath.files
 }
