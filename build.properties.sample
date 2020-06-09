@@ -14,7 +14,7 @@
 # Location of the integrated Tomcat installation; e.g. server.home=${env.CATALINA_HOME}.  This
 # property corresponds with the ${catalina.home} property within Tomcat (see Tomcat/bin/catalina.sh).
 #
-server.home=/opt/Atest/tomcat
+server.home=/opt/${user}/tomcat
 
 # (Optional) Base directory for resolving dynamic portions of the integrated Tomcat installation.
 # This property corresponds with the ${catalina.base} property within Tomcat (see
@@ -26,7 +26,7 @@ server.home=/opt/Atest/tomcat
 # This property permti to deploy apps on a customized directory. Default value will
 # be on ${server.base}/webapps
 #
-server.webapps=/opt/Atest/webapps
+server.webapps=/opt/${user}/webapps
 
 # Location of static cached files
-server.sharedCacheDir=/opt/Atest/cache
+server.sharedCacheDir=/opt/${user}/cache

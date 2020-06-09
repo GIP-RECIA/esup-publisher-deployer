@@ -10,3 +10,7 @@ build
 **/.project
 .settings/**
 **/.settings/**
+
+# ignore local deployement properties
+build.properties
+
