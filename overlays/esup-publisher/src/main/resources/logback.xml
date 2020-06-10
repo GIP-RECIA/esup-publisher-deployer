@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration scan="true" scanPeriod="30 seconds">
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_DIR}/publisher.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_DIR}/logs/archives/publisher.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+            <maxHistory>366</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <charset>utf-8</charset>
+            <Pattern>%d %-5level [%thread] %logger: %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+     <root level="${logback.loglevel:-WARN}">
+        <appender-ref ref="FILE"/>
+    </root>
+
+
+    <logger name="org.esupportail.publisher" level="WARN"/>
+
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <resetJUL>true</resetJUL>
+    </contextListener>
+
+</configuration>
