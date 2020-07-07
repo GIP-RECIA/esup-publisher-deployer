@@ -15,6 +15,11 @@ before_script:
     echo Current dir is `pwd`
     echo Home dir is `echo ~`
     echo TRAVIS_BUILD_DIR is $TRAVIS_BUILD_DIR
+  - |
+    cat build.properties.sample >> build.properties
+    echo "project.home=etc/esup-publisher" >> build.properties
+    echo "show generated build.properties file"
+    cat build.properties
 
 script:
   # test embedded tomcat
@@ -32,7 +37,7 @@ script:
   - ./gradlew -i -S tomcatStart
   - ./gradlew -i -S tomcatStop
   - ./gradlew -i -S tomcatClearLogs
-  
+
 cache:
   directories:
     - .gradle
