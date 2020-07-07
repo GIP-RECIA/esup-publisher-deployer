@@ -1,0 +1,36 @@
+language: java
+
+jobs:
+  include:
+    - os: linux
+      dist: trusty
+      jdk: openjdk8
+
+before_script:
+  - |
+    echo Start travis
+    echo Current dir is `pwd`
+    echo Home dir is `echo ~`
+    echo TRAVIS_BUILD_DIR is $TRAVIS_BUILD_DIR
+
+script:
+  # test embedded tomcat
+  - ./gradlew -i -S tomcatInstall
+  - ./gradlew -i -S tomcatStart
+  - ./gradlew -i -S tomcatStop
+  - ./gradlew -i -S tomcatClearLogs
+  # test deploying all apps
+  - ./gradlew -i -S tomcatDeploy
+  - ./gradlew -i -S tomcatStart
+  - ./gradlew -i -S tomcatStop
+  - ./gradlew -i -S tomcatClearLogs
+  # test deploying esup-publisher app
+  - ./gradlew -i -S overlays:esup-publisher:tomcatDeploy
+  - ./gradlew -i -S tomcatStart
+  - ./gradlew -i -S tomcatStop
+  - ./gradlew -i -S tomcatClearLogs
+  
+cache:
+  directories:
+    - .gradle
+    - $HOME/.gradle/
