@@ -174,9 +174,14 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <!-- Access log for HAproxy -->
         <Valve className="org.apache.catalina.valves.RemoteIpValve" />
-        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
-               prefix="localhost_access_log" suffix=".txt"
-               pattern="%h %l %u %t &quot;%r&quot; %s %b" />
+        <Valve className="org.apache.catalina.valves.AccessLogValve"
+          directory="logs"
+          prefix="access"
+          suffix=".log"
+          pattern='%h %{X-HAProxy-Name}i %l %u %t "%r" %s %b %S %Dms %Fms %I %X %{X-Unique-Id}i "%{Referer}i" "%{User-Agent}i"'
+          renameOnRotate="true"
+          requestAttributesEnabled="true"
+        />
 
       </Host>
     </Engine>
