@@ -1,9 +1,11 @@
 dependencies {
-    compile "org.esupportail.publisher:esup-publisher-ui:${esupPublisherVersion}@war"
+    compileOnly "org.esupportail.publisher:esup-publisher-ui:${esupPublisherVersion}@war"
 }
 
+apply plugin: 'war'
+
 war {
-    archiveName "${appName}.war"
+    archiveFileName="${appName}.war"
 
     classpath = classpath.files
 }
