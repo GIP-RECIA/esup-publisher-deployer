@@ -91,6 +91,7 @@ task tomcatInstall {
 task tomcatStart() {
     group 'Tomcat'
     description 'Start the embedded Tomcat servlet container'
+    dependsOn ':projectProperties'
 
     /*
      * When we chain tasks together -- which is often convenient -- there are some other tasks that
