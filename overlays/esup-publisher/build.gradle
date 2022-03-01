@@ -1,5 +1,5 @@
 dependencies {
-    runtime "org.esupportail.publisher:esup-publisher-ui:${esupPublisherVersion}@war"
+    runtimeOnly "org.esupportail.publisher:esup-publisher-ui:${esupPublisherVersion}@war"
 }
 
 war {

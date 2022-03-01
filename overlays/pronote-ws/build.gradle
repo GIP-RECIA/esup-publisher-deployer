@@ -1,5 +1,5 @@
 dependencies {
-    runtime "fr.recia.pronote.ws:esco-pronote-ws:${pronoteWSVersion}@war"
+    runtimeOnly "fr.recia.pronote.ws:esco-pronote-ws:${pronoteWSVersion}@war"
 }
 
 war {
