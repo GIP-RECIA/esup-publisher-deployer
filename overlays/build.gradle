@@ -19,10 +19,10 @@ subprojects {
             }
         }
         maven {
-            url "https://nexus.recia.fr/repository/releases/"
+            url "https://nexus.recia.dev/repository/releases/"
         }
         maven {
-            url "https://nexus.recia.fr/repository/snapshots/"
+            url "https://nexus.recia.dev/repository/snapshots/"
         }
 
     }
