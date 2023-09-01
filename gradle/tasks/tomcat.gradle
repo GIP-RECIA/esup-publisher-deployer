@@ -28,10 +28,11 @@ private boolean verifyTomcatState(Project project, boolean verifyRunning) {
 }
 
 
-task tomcatInstall {
+task tomcatInstall() {
     group 'Tomcat'
     description 'Downloads the Apache Tomcat servlet container and performs the necessary configuration steps'
     dependsOn ':projectProperties'
+    finalizedBy 'tomcatConfig'
 
     doLast {
         String serverHome = rootProject.ext['buildProperties'].getProperty('server.home')
@@ -62,6 +63,16 @@ task tomcatInstall {
             from "${tomcatTmpDir}/apache-tomcat-${tomcatVersion}"
             into serverHome
         }
+    }
+}
+
+task tomcatConfig() {
+    group 'Tomcat'
+    description 'Configures Tomcat servlet container, used to update an existing Tomcat install'
+    dependsOn ':projectProperties'
+
+    doLast {
+        String serverHome = rootProject.ext['buildProperties'].getProperty('server.home')
 
         //  Configure our settings by overlaying etc/tomcat
         copy {
@@ -76,14 +87,16 @@ task tomcatInstall {
         }
 
         /*
-         * Create & initialize the folder that is the default location of {project.home].  (If
+         * Create & initialize the folder that is the default location of {project.home}.  (If
          * another location has been specified, we don't want to mess with that.)
          */
-        String projectHomeDir = "${serverHome}/${appName}"
+        String projectHomeDir = rootProject.ext['buildProperties'].getProperty('project.home')
         file(projectHomeDir).mkdirs()
         copy {
             from "etc/${appName}"
+            //include '*_config/*.*'
             into projectHomeDir
+            //eachFile { logger.lifecycle("copied ${it} into '${projectHomeDir}/${it.getRelativePath()}'") }
         }
     }
 }

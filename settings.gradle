@@ -10,6 +10,6 @@
 rootProject.name = 'gradle-war-deployer'
 
 
-include "overlays:${appName}"
+include "overlays:esup-publisher"
 include "overlays:pronote-ws"
 include 'overlays:psi-probe'

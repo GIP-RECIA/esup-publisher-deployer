@@ -28,5 +28,11 @@ server.home=/opt/${user}/tomcat
 #
 server.webapps=/opt/${user}/webapps
 
+# (Optional) project home directory where all karuta's project will found there config directories
+# This property permit to set where to deploy at tomcatInstall the default configuration files
+# This is the default path configuration
+#
+# project.home=${server.base}
+
 # Location of static cached files
 server.sharedCacheDir=/opt/${user}/cache
