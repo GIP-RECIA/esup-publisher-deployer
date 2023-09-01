@@ -112,7 +112,7 @@ task projectProperties() {
          */
         if (!buildProperties.containsKey('project.home')) {
             // Still need to check for a JVM argument...
-            String projectHome = System.getProperty('project.home') ?: "${buildProperties.getProperty('server.base')}/${appName}"
+            String projectHome = System.getProperty('project.home') ?: "${buildProperties.getProperty('server.base')}"
             buildProperties.setProperty('project.home', projectHome)
         }
 

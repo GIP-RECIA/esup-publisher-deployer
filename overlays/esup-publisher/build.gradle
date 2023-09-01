@@ -1,9 +1,9 @@
 dependencies {
-    runtimeOnly "org.esupportail.publisher:esup-publisher-ui:${esupPublisherVersion}@war"
+    runtime "org.esupportail.publisher:esup-publisher-ui:${esupPublisherVersion}@war"
 }
 
 war {
-    archiveFileName="${appName}.war"
+    archiveFileName="esup-publisher.war"
 
     classpath = classpath.files
 }

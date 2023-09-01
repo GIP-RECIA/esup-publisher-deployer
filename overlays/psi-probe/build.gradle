@@ -1,5 +1,5 @@
 dependencies {
-    runtimeOnly "com.github.psi-probe:psi-probe-web:${psiProbeVersion}@war"
+    runtime "com.github.psi-probe:psi-probe-web:${psiProbeVersion}@war"
 }
 
 war {
