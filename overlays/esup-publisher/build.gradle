@@ -3,7 +3,7 @@ dependencies {
 }
 
 war {
-    archiveFileName="esup-publisher.war"
+    archiveName="esup-publisher.war"
 
     classpath = classpath.files
 }
