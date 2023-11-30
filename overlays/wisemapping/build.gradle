@@ -1,5 +1,5 @@
 dependencies {
-    runtime "fr.recia:wise-webapp:${wisemappingVersion}@war"
+    runtime "org.wisemapping:wise-webapp:${wisemappingVersion}@war"
 }
 
 war {
