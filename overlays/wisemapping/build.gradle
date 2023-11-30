@@ -1,0 +1,9 @@
+dependencies {
+    runtime "fr.recia:wise-webapp:${wisemappingVersion}@war"
+}
+
+war {
+    archiveName="wisemapping.war"
+
+    classpath = classpath.files
+}
