@@ -15,7 +15,7 @@ class GradleCustomTasksPlugin implements Plugin<Project> {
                 logger.lifecycle("Check if shared cache directory already exist, else will create it !");
                 String cacheDir = project.rootProject.ext['buildProperties'].getProperty('server.sharedCacheDir')
                 logger.lifecycle("Shared Cache Directory properties defined on path '${cacheDir}'");
-                File dir = new File((String)cacheDir);
+                File dir = new File((String) cacheDir);
                 if (!dir.exists()) {
                     logger.lifecycle("Shared cache directory not already existing, will create it '${cacheDir}'");
                     dir.mkdir();

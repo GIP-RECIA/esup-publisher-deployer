@@ -2,7 +2,7 @@
 
 <configuration scan="true" scanPeriod="30 seconds">
     <contextName>publisher</contextName>
-    <jmxConfigurator />
+    <jmxConfigurator/>
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOG_DIR}/${CONTEXT_NAME}.log</file>
@@ -17,7 +17,7 @@
         </encoder>
     </appender>
 
-     <root level="${logback.loglevel:-WARN}">
+    <root level="${logback.loglevel:-WARN}">
         <appender-ref ref="FILE"/>
     </root>
 

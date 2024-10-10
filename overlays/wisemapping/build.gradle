@@ -3,7 +3,7 @@ dependencies {
 }
 
 war {
-    archiveName="wisemapping.war"
+    archiveName = "wisemapping.war"
 
     classpath = classpath.files
 }

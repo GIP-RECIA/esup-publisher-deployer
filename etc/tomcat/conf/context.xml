@@ -25,5 +25,5 @@
     <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
 
     <!-- Comment this to enable session persistence across Tomcat restarts -->
-    <Manager pathname="" />
+    <Manager pathname=""/>
 </Context>

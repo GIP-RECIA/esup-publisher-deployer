@@ -2,7 +2,7 @@
 
 <configuration scan="true" scanPeriod="30 seconds">
     <contextName>pronote-ws</contextName>
-    <jmxConfigurator />
+    <jmxConfigurator/>
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOG_DIR}/${CONTEXT_NAME}.log</file>
@@ -18,11 +18,11 @@
     </appender>
 
     <root level="INFO">
-        <appender-ref ref="FILE" />
+        <appender-ref ref="FILE"/>
     </root>
 
-    <logger name="fr.recia" level="INFO" />
-    <logger name="org" level="WARN" />
+    <logger name="fr.recia" level="INFO"/>
+    <logger name="org" level="WARN"/>
 
     <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
         <resetJUL>true</resetJUL>

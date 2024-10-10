@@ -19,13 +19,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up JDK 11
-      uses: actions/setup-java@v3
-      with:
-        java-version: '11'
-        distribution: 'temurin'
-    - name: Prepare project
-      run: cp build.properties.sample build.properties
-    - name: Run tasks
-      run: ./gradlew tomcatInstall && ./gradlew tomcatDeploy
+      - uses: actions/checkout@v3
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+      - name: Prepare project
+        run: cp build.properties.sample build.properties
+      - name: Run tasks
+        run: ./gradlew tomcatInstall && ./gradlew tomcatDeploy

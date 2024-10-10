@@ -1,5 +1,3 @@
-import java.nio.file.Paths
-
 /*
  * Allows a collection of Java versions to be supported.
  * If the currect Java version is unsupported, it will stop the current task execution.
@@ -9,12 +7,12 @@ task javaVersionCheck() {
     description 'Ensures the current Java version is supported'
 
     doLast {
-        def supportedJavaVersions = [ JavaVersion.VERSION_1_8, JavaVersion.VERSION_11 ];
+        def supportedJavaVersions = [JavaVersion.VERSION_1_8, JavaVersion.VERSION_11];
         def currentJavaVersion = JavaVersion.current();
         if (!supportedJavaVersions.contains(currentJavaVersion)) {
             throw new GradleException("Incorrect Java version; found ${currentJavaVersion} but supported versions are:  ${supportedJavaVersions}");
         }
-        logger.lifecycle("Java version OK:  ${currentJavaVersion}" )
+        logger.lifecycle("Java version OK:  ${currentJavaVersion}")
     }
 }
 

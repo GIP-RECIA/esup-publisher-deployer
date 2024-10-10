@@ -3,7 +3,7 @@ dependencies {
 }
 
 war {
-    archiveName="glc.war"
+    archiveName = "glc.war"
 
     classpath = classpath.files
 }

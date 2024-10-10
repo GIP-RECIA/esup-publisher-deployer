@@ -15,7 +15,7 @@ class GradleTomcatDeployPlugin implements Plugin<Project> {
 
             doFirst {
                 File serverWebapps = project.rootProject.file(project.rootProject.ext['buildProperties'].getProperty('server.webapps'))
-                File deployDir = new File (serverWebapps, "${project.name}")
+                File deployDir = new File(serverWebapps, "${project.name}")
                 logger.lifecycle("Removing deployed application from servlet container at location:  ${deployDir}")
                 delete deployDir
             }
@@ -28,7 +28,7 @@ class GradleTomcatDeployPlugin implements Plugin<Project> {
 
             doFirst {
                 File serverWebapps = project.rootProject.file(project.rootProject.ext['buildProperties'].getProperty('server.webapps'))
-                File deployDir = new File (serverWebapps, "${project.name}")
+                File deployDir = new File(serverWebapps, "${project.name}")
                 logger.lifecycle("Deploying assembled application to servlet container at location:  ${deployDir}")
 
                 File warFile = new File("${project.buildDir}/libs/${project.war.archiveName}")

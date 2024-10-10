@@ -92,7 +92,7 @@ task tomcatConfig() {
          */
         String projectHomeDir = rootProject.ext['buildProperties'].getProperty('project.home')
         file(projectHomeDir).mkdirs()
-	logger.lifecycle("\nDeploying files from 'etc/${appName}/*.*' into ${projectHomeDir}/")
+        logger.lifecycle("\nDeploying files from 'etc/${appName}/*.*' into ${projectHomeDir}/")
         copy {
             from "etc/${appName}"
             //include '*_config/*.*'
