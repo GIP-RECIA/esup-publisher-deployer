@@ -165,6 +165,9 @@
           <Context path="/pronote-ws" docBase="${server.webapps}/pronote-ws" reloadable="false" crossContext="true">
                <Parameter name="spring.config.additional-location" value="${PROJECT_HOME}/pronote-ws/"/>
           </Context>
+          <Context path="/si-ent-api" docBase="${server.webapps}/si-ent-api" reloadable="false" crossContext="true">
+               <Parameter name="spring.config.additional-location" value="${PROJECT_HOME}/si-ent-api/"/>
+          </Context>
           <Context path="/glc2" docBase="${server.webapps}/GLC" reloadable="false" crossContext="true">
                <Parameter name="spring.config.additional-location" value="${PROJECT_HOME}/glc/"/>
           </Context>
