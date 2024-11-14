@@ -21,7 +21,6 @@
         <appender-ref ref="FILE"/>
     </root>
 
-
     <logger name="com.wisemapping" level="WARN"/>
 
     <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">

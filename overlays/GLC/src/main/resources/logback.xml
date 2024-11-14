@@ -21,7 +21,6 @@
         <appender-ref ref="FILE"/>
     </root>
 
-
     <logger name="fr.recia.glc" level="WARN"/>
 
     <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">

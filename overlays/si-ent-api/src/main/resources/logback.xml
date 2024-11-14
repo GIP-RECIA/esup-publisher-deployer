@@ -30,7 +30,6 @@
         </encoder>
     </appender>
 
-
     <logger name="fr.recia" level="WARN"/>
     <logger name="org" level="WARN"/>
 
